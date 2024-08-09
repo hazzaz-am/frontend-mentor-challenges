@@ -1,5 +1,6 @@
 :root {
 	--clr-primary-400: hsl(158, 36%, 37%);
+	--clr-primary-500: hsl(158, 36%, 20%);
 	--clr-secondary-200: hsl(30, 38%, 92%);
 
 	--clr-neutral-900: hsl(212, 21%, 14%);
@@ -33,7 +34,7 @@
   4. Improve text rendering
 */
 body {
-	line-height: 1.5;
+	line-height: 1.7;
 	-webkit-font-smoothing: antialiased;
 }
 /*
@@ -67,4 +68,116 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1;
+}
+
+/* general styling */
+
+body {
+	font-family: var(--ff-base);
+	font-weight: var(--fw-regular);
+	font-size: 0.875rem;
+	color: var(--clr-neutral-400);
+	background-color: var(--clr-secondary-200);
+
+	display: grid;
+	place-content: center;
+	margin: 1rem;
+}
+
+/* utilities */
+
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.flex-group {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+/* button styling */
+.button {
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-flex;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+
+	border: 0;
+	padding: 0.75em 1.5em;
+	background-color: var(--clr-primary-400);
+	color: var(--clr-neutral-100);
+	border-radius: 0.5rem;
+	font-size: 0.925rem;
+	font-weight: var(--fw-bold);
+}
+
+.button[data-icon="shopping-cart"]::before {
+	content: "";
+	background-image: url("./images/icon-cart.svg");
+	width: 15px;
+	height: 16px;
+}
+
+.button:is(:hover, :focus) {
+	background-color: var(--clr-primary-500);
+}
+
+/* product styling */
+.product {
+	--content-padding: 1.5rem;
+	--content-spacing: 1rem;
+
+	display: grid;
+	background-color: var(--clr-neutral-100);
+	border-radius: 0.5rem;
+	overflow: hidden;
+	max-width: 600px;
+}
+
+@media (min-width: 600px) {
+	.product {
+		--content-padding: 2rem;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.product__content {
+	padding: var(--content-padding);
+	display: grid;
+	gap: var(--content-spacing);
+}
+
+.product__category {
+	font-size: 0.8125rem;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+.product__title {
+	color: var(--clr-neutral-900);
+	font-family: var(--ff-accent);
+	font-size: 2rem;
+}
+
+.product__price {
+	font-size: 2rem;
+	font-family: var(--ff-accent);
+	font-weight: var(--fw-bold);
+	color: var(--clr-primary-400);
 }
