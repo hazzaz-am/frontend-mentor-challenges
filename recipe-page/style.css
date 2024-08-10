@@ -8,6 +8,16 @@
 	src: url("/assets/fonts/young-serif/YoungSerif-Regular.ttf");
 }
 
+:root {
+	--clr-primary-400: hsl(14, 45%, 36%);
+	--clr-secondary-200: hsl(30, 54%, 90%);
+
+	--clr-neutral-900: hsl(30, 10%, 34%);
+	--clr-neutral-500: hsl(332, 51%, 32%);
+	--clr-neutral-400: hsl(330, 100%, 98%);
+	--clr-neutral-300: hsl(30, 18%, 87%);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -16,7 +26,7 @@
 }
 
 body {
-	background-color: hsl(30, 54%, 90%);
+	background-color: var(--clr-secondary-200);
 }
 
 img {
@@ -26,13 +36,13 @@ img {
 h1,
 h2 {
 	font-family: youngserif;
-	color: hsl(14, 45%, 36%);
+	color: var(--clr-primary-400);
 	letter-spacing: 0.05rem;
 }
 
 p,
 li {
-	color: hsl(30, 10%, 34%);
+	color: var(--clr-neutral-900);
 	line-height: 1.6;
 }
 
@@ -46,15 +56,6 @@ ul {
 }
 
 /* general styling */
-.attribution {
-	font-size: 11px;
-	text-align: center;
-	margin-bottom: 5rem;
-	margin-top: 1rem;
-}
-.attribution a {
-	color: hsl(228, 45%, 44%);
-}
 
 .container {
 	max-width: 900px;
@@ -72,19 +73,43 @@ ul {
 }
 
 .banner article {
-	background-color: hsl(330, 100%, 98%);
+	background-color: var(--clr-neutral-400);
 	padding: 1.5rem;
 	border-radius: 0.5rem;
 	margin-top: 1.5rem;
 }
 
+.banner article ul li::marker {
+	color: var(--clr-neutral-500);
+}
+
 .banner article h3 {
-	color: hsl(332, 51%, 32%);
+	color: var(--clr-neutral-500);
+}
+
+.ingredients ul li::marker {
+	color: var(--clr-primary-400);
 }
 
 .instructions {
-	border-top: 1px solid hsl(30, 18%, 87%);
-	border-bottom: 1px solid hsl(30, 18%, 87%);
+	border-top: 1px solid var(--clr-neutral-300);
+	border-bottom: 1px solid var(--clr-neutral-300);
+}
+
+.instructions ol {
+	list-style: none;
+	counter-reset: num;
+}
+
+.instructions ol li {
+	counter-increment: num;
+}
+
+.instructions ol li::before {
+	content: counter(num) ". ";
+	color: var(--clr-primary-400);
+	font-weight: bold;
+	margin-right: 5px;
 }
 
 .nutrition p {
@@ -94,9 +119,16 @@ ul {
 .nutrition ul li {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
-	border-bottom: 1px solid hsl(30, 18%, 87%);
+	justify-content: space-between;
+	border-bottom: 1px solid var(--clr-neutral-300);
 	padding: 0.5rem 0;
+	padding-left: 2.5rem;
+}
+
+.nutrition ul li span {
+	color: var(--clr-primary-400);
+	font-weight: bold;
+	width: 50%;
 }
 
 .nutrition ul li:last-child {
@@ -108,6 +140,7 @@ ul {
 @media screen and (min-width: 786px) {
 	.container {
 		margin: 5rem auto 0;
+		margin-bottom: 5rem;
 		padding: 2rem;
 		border-radius: 1rem;
 	}
