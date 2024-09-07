@@ -1,0 +1,116 @@
+:root {
+	--clr-primary-900: hsl(180, 29%, 50%);
+
+	--clr-neutral-900: hsl(180, 14%, 20%);
+	--clr-neutral-700: hsl(180, 8%, 52%);
+	--clr-neutral-200: hsl(180, 31%, 95%);
+	--clr-neutral-100: hsl(180, 52%, 96%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	font-size: 15px;
+	font-family: "League Spartan", sans-serif;
+}
+
+img,
+svg {
+	width: 100%;
+}
+
+.flex-group {
+	display: flex;
+	align-items: center;
+}
+
+/* header area */
+
+.header-area {
+	background: var(--clr-primary-900);
+}
+
+/* job listin area */
+.job__listing-area {
+	padding: 100px;
+	background: var(--clr-neutral-100);
+}
+
+.single-job {
+	background-color: white;
+	box-shadow: var(--clr-neutral-200) 0px 25px 20px -20px;
+	padding: 30px;
+	border-radius: 10px;
+	border-left: 5px solid transparent;
+	transition: 0.4s;
+	cursor: pointer;
+	margin-bottom: 50px;
+}
+
+.single-job:hover {
+	border-left: 5px solid var(--clr-primary-900);
+}
+
+.single-job.flex-group {
+	justify-content: space-between;
+}
+
+.job-details.flex-group {
+	gap: 30px;
+}
+
+.job-description {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.company__name-type.flex-group {
+	gap: 16px;
+}
+
+.company {
+	color: var(--clr-primary-900);
+}
+
+.type {
+	height: 10px;
+	display: inline-block;
+	padding: 7px;
+	font-weight: 700;
+	color: white;
+	border-radius: 50px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.type.new {
+	background: var(--clr-primary-900);
+}
+
+.type.featured {
+	background: var(--clr-neutral-900);
+}
+
+.post__date-time.flex-group {
+	justify-content: space-between;
+	color: var(--clr-neutral-700);
+	font-weight: 500;
+}
+
+.tags.flex-group {
+	gap: 30px;
+}
+
+.tags.flex-group li {
+	background: var(--clr-neutral-200);
+	padding: 10px;
+	border-radius: 4px;
+	color: var(--clr-primary-900);
+	font-weight: 700;
+}
