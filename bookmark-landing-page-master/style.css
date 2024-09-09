@@ -1,0 +1,233 @@
+:root {
+	--clr-primary-900: hsl(231, 69%, 60%);
+	--clr-secondary-900: hsl(0, 94%, 66%);
+
+	--clr-neutral-900: hsl(229, 31%, 21%);
+	--clr-neutral-500: hsl(229, 8%, 60%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+img,
+svg {
+	width: 100%;
+}
+
+body {
+	font-family: "Rubik", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.container {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.flex-group {
+	display: flex;
+	align-items: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 24px;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+section {
+	margin-top: 70px;
+}
+
+p {
+	color: var(--clr-neutral-500);
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.title {
+	color: var(--clr-neutral-900);
+	font-size: 32px;
+}
+
+/*! Header Design Start */
+.header.flex-group {
+	justify-content: space-between;
+	padding: 40px 0;
+}
+
+.navbar.flex-group {
+	gap: 40px;
+}
+
+.menu-links.flex-group {
+	gap: 40px;
+}
+
+.menu-links.flex-group li {
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.menu-links.flex-group li:hover a {
+	color: var(--clr-secondary-900);
+}
+
+.menu-links.flex-group a {
+	display: inline-block;
+	color: var(--clr-neutral-900);
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+a.nav-cta {
+	background: var(--clr-secondary-900);
+	color: white;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+	border: 2px solid transparent;
+	transition: 0.4s;
+}
+
+a.nav-cta:hover {
+	border: 2px solid var(--clr-secondary-900);
+	color: var(--clr-secondary-900);
+	background: transparent;
+}
+
+/*! Header Design End */
+
+/*! Banner Design Start */
+
+.banner__section.flex-group {
+	justify-content: space-between;
+}
+
+.banner__left-side {
+	width: 50%;
+}
+
+.banner__title {
+	font-size: 48px;
+	color: var(--clr-neutral-900);
+}
+
+.banner__para {
+	margin: 20px 0;
+}
+
+.banner__cta {
+	gap: 20px;
+}
+
+.banner-cta {
+	padding: 12px 24px;
+	border: 2px solid transparent;
+	transition: 0.4s;
+	font-weight: 500;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+a.chrome {
+	background: var(--clr-primary-900);
+	color: white;
+}
+
+a.firefox {
+	background: white;
+	color: var(--clr-neutral-900);
+}
+
+a.firefox:hover {
+	color: var(--clr-neutral-900);
+	background: transparent;
+	border: 2px solid var(--clr-neutral-900);
+}
+
+a.chrome:hover {
+	color: var(--clr-primary-900);
+	background: transparent;
+	border: 2px solid var(--clr-primary-900);
+}
+
+.banner__right-side {
+	width: 50%;
+}
+
+/*! Banner Design End */
+
+/*! Features Design Start */
+
+.features-header {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.features-title {
+	margin-bottom: 20px;
+}
+
+.features-para {
+	width: 600px;
+	margin: auto;
+	text-align: center;
+}
+
+.features-tabs {
+	width: 800px;
+	margin: auto;
+	margin-bottom: 50px;
+	border-bottom: 1px solid var(--clr-neutral-500);
+}
+
+.tabs.flex-group {
+	justify-content: space-between;
+}
+
+.tabs.flex-group li {
+	padding: 10px 30px;
+	cursor: pointer;
+	border-bottom: 3px solid transparent;
+	transition: 0.4s;
+	color: var(--clr-neutral-900);
+}
+
+.tabs.flex-group li:hover {
+	border-bottom: 3px solid var(--clr-secondary-900);
+}
+
+.features-section.flex-group {
+	justify-content: space-between;
+}
+
+.features-left {
+	width: 40%;
+}
+
+.features-right {
+	width: 50%;
+}
+
+.bookmark-para {
+	margin: 20px 0;
+}
+
+.bookmark-btn {
+	padding: 12px 24px;
+	border: 2px solid transparent;
+	transition: 0.4s;
+	font-weight: 500;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background: var(--clr-primary-900);
+	color: white;
+}
+
+
+
+/*! Features Design End */

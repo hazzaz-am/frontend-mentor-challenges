@@ -78,16 +78,17 @@ h3 {
 
 /* general styling */
 
+
 body {
 	font-family: var(--ff-base);
 	font-weight: var(--fw-regular);
 	font-size: 0.875rem;
 	color: var(--clr-neutral-400);
 	background-color: var(--clr-secondary-200);
-
-	display: grid;
-	place-content: center;
-	margin: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
 }
 
 /* utilities */
