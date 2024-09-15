@@ -39,6 +39,7 @@ body {
 	padding: 6px 24px;
 	border-radius: 4px;
 	font-size: 14px;
+	cursor: pointer;
 }
 
 section {
@@ -228,6 +229,234 @@ a.chrome:hover {
 	color: white;
 }
 
-
-
 /*! Features Design End */
+
+/*! Extension Design Start */
+.extensions--section__area {
+	padding: 0px 150px;
+}
+
+.extensions--section__header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.extensions--section__title {
+	margin-bottom: 10px;
+}
+
+.extensions--section__description {
+	width: 600px;
+	margin: auto;
+}
+
+.extensions--main {
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.extensions--main__firefox {
+	margin-top: 40px;
+}
+
+.extensions--main__opera {
+	margin-top: 80px;
+}
+
+.individual--extension {
+	background: white;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 10px;
+	width: 30%;
+}
+
+.individual--extension__upper-content {
+	padding: 60px 10px 20px 10px;
+	text-align: center;
+}
+
+.individual--extension__upper-content img {
+	width: 100px;
+	margin-bottom: 20px;
+}
+
+.individual--extension__title {
+	color: var(--clr-neutral-900);
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.individual--extension__description {
+	font-size: 16px;
+}
+
+.individual--extension__bottom-content {
+	padding: 0 16px 16px 16px;
+}
+
+.individual--extension__btn {
+	padding: 12px;
+	border: 2px solid transparent;
+	transition: 0.4s;
+	font-weight: 500;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background: var(--clr-primary-900);
+	color: white;
+	margin-top: 12px;
+	width: 100%;
+	font-weight: 600;
+}
+
+.individual--extension__btn:hover {
+	border: 2px solid var(--clr-primary-900);
+	background: transparent;
+	color: var(--clr-primary-900);
+}
+
+/*! Extension Design End */
+
+/*! Questions Design Start */
+.questions--section__header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.questions--section__title {
+	margin-bottom: 10px;
+}
+
+.questions--section__description {
+	width: 600px;
+	margin: auto;
+}
+
+.questions--section__area {
+	width: 700px;
+	margin: auto;
+}
+
+.questions--section__item.flex-group {
+	justify-content: space-between;
+	padding: 15px 0;
+	border-top: 1px solid var(--clr-neutral-500);
+	cursor: pointer;
+}
+
+.questions--section__single--question {
+	color: var(--clr-neutral-900);
+	font-weight: 500;
+}
+
+.questions--section__item.flex-group i {
+	color: var(--clr-primary-900);
+	font-size: 20px;
+}
+
+.questions--section__item--border {
+	border-bottom: 1px solid var(--clr-neutral-500);
+}
+
+.questions--section__cta {
+	width: 100%;
+	text-align: center;
+	margin: 50px;
+}
+
+.questions--section__btn {
+	padding: 12px;
+	border: 2px solid transparent;
+	transition: 0.4s;
+	font-weight: 500;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background: var(--clr-primary-900);
+	color: white;
+	margin-top: 12px;
+}
+/*! Questions Design End */
+
+/*! Newsletter Design Start */
+.newsletter--section {
+	background-color: var(--clr-primary-900);
+	padding: 40px 0;
+}
+
+.newsletter--section__members {
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 5px;
+	margin-bottom: 20px;
+}
+
+.newsletter--section__title {
+	text-align: center;
+	color: white;
+	width: 400px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+.newsletter--section__form {
+	width: 400px;
+	margin: auto;
+}
+
+.newsletter--section__form input {
+	padding: 16px 20px;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	width: 249px;
+}
+
+.newsletter--section__btn {
+	padding: 14px;
+	border: 2px solid var(--clr-secondary-900);
+	transition: 0.4s;
+	font-weight: 500;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background: var(--clr-secondary-900);
+	color: white;
+	margin-top: 12px;
+	font-weight: 600;
+	border-radius: 6px;
+}
+
+.newsletter--section__btn:hover {
+	background-color: white;
+	color: var(--clr-secondary-900);
+}
+/*! Newsletter Design End */
+
+
+/*! Footer Design Start */
+.footer--section {
+	background-color: var(--clr-neutral-900);
+	padding: 20px 0;
+}
+
+.footer--section__area.flex-group {
+	justify-content: space-between;
+}
+
+.footer--section__links.flex-group {
+	gap: 50px;
+}
+
+.footer--section__menu.flex-group {
+	gap: 20px;
+}
+
+.footer--section__menu.flex-group  a {
+	display: inline-block;
+	color: white;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.footer--section__social.flex-group {
+	gap: 20px;
+}
+/*! Footer Design End */

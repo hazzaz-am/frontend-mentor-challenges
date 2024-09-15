@@ -1,178 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Bookmark landing page</title>
+	</head>
+	<body>
+		<!--! Header Area Start -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>Bookmark landing page</title>
-  
-</head>
-<body>
+		<header class="header-area">
+			<div class="header container flex-group">
+				<div class="header-logo">
+					<img src="./images/logo-bookmark.svg" alt="" />
+				</div>
+				<nav class="navbar flex-group">
+					<ul class="menu-links flex-group">
+						<li><a href="">Features</a></li>
+						<li><a href="">Pricing</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+					<a href="#" class="btn nav-cta">Login</a>
+				</nav>
+			</div>
+		</header>
 
-  <!--! Header Area Start -->
+		<!--! Header Area End -->
 
-   <header class="header-area">
-    <div class="header container flex-group">
-      <div class="header-logo">
-        <img src="./images/logo-bookmark.svg" alt="">
-      </div>
-      <nav class="navbar flex-group">
-        <ul class="menu-links flex-group">
-          <li><a href="">Features</a></li>
-          <li><a href="">Pricing</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-        <a href="#" class="btn nav-cta">Login</a>
-      </nav>
-    </div>
-   </header>
-  
-  <!--! Header Area End -->
+		<!--! Banner Area Start -->
 
-  <!--! Banner Area Start -->
+		<section class="banner__section-area">
+			<div class="banner__section container flex-group">
+				<div class="banner__left-side">
+					<h2 class="banner__title">A Simple Bookmark Manager</h2>
+					<p class="banner__para">
+						A clean and simple interface to organize your favourite websites.
+						Open a new browser tab and see your sites load instantly. Try it for
+						free.
+					</p>
+					<div class="banner__cta flex-group">
+						<a href="" class="btn banner-cta chrome">Get it on Chrome</a>
+						<a href="" class="btn banner-cta firefox">Get it on Firefox</a>
+					</div>
+				</div>
+				<div class="banner__right-side">
+					<img src="./images/illustration-hero.svg" alt="" />
+				</div>
+			</div>
+		</section>
 
-  <section class="banner__section-area">
-    <div class="banner__section container flex-group">
-      <div class="banner__left-side">
-        <h2 class="banner__title">A Simple Bookmark Manager</h2>
-        <p class="banner__para">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
-        <div class="banner__cta flex-group">
-          <a href="" class="btn banner-cta chrome">Get it on Chrome</a>
-          <a href="" class="btn banner-cta firefox">Get it on Firefox</a>
-        </div>
-      </div>
-      <div class="banner__right-side">
-        <img src="./images/illustration-hero.svg" alt="">
-      </div>
-    </div>
-  </section>
+		<!--! Banner Area End -->
 
-  <!--! Banner Area End -->
+		<!--! Features Area Start -->
 
-  <!--! Features Area Start -->
+		<section class="features-section-area">
+			<div class="features-header">
+				<h2 class="features-title title">Features</h2>
+				<p class="features-para">
+					Our aim is to make it quick and easy for you to access your favourite
+					websites. Your bookmarks sync between your devices so you can access
+					them on the go.
+				</p>
+			</div>
+			<div class="features-tabs">
+				<ul class="tabs flex-group">
+					<li>Simple Bookmarking</li>
+					<li>Speedy Searching</li>
+					<li>Easy Sharing</li>
+				</ul>
+			</div>
+			<div class="features-section container flex-group">
+				<div class="features-left">
+					<img src="./images/illustration-features-tab-1.svg" alt="" />
+				</div>
+				<div class="features-right">
+					<h2 class="bookmark-title title">Bookmark in one click</h2>
+					<p class="bookmark-para">
+						Organize your bookmarks however you like. Our simple drag-and-drop
+						interface gives you complete control over how you manage your
+						favourite sites.
+					</p>
+					<a href="" class="btn bookmark-btn">More Info</a>
+				</div>
+			</div>
+		</section>
 
-  <section class="features-section-area">
-    <div class="features-header">
-      <h2 class="features-title title">Features</h2>
-      <p class="features-para">Our aim is to make it quick and easy for you to access your favourite websites. 
-        Your bookmarks sync between your devices so you can access them on the go.</p>
-    </div>
-    <div class="features-tabs">
-      <ul class="tabs flex-group">
-        <li>Simple Bookmarking</li>
-        <li>Speedy Searching</li>
-        <li>Easy Sharing</li>
-      </ul>
-    </div>
-    <div class="features-section container flex-group">
-      <div class="features-left">
-        <img src="./images/illustration-features-tab-1.svg" alt="">
-      </div>
-      <div class="features-right">
-        <h2 class="bookmark-title title">Bookmark in one click</h2>
-        <p class="bookmark-para">Organize your bookmarks however you like. Our simple drag-and-drop interface 
-          gives you complete control over how you manage your favourite sites.</p>
-        <a href="" class="btn bookmark-btn">More Info</a>
-      </div>
-    </div>
-  </section>
+		<!--! Features Area End -->
 
-  <!--! Features Area End -->
+		<!--! Extension Area Start -->
 
+		<section class="extensions--section">
+			<div class="extensions--section__header">
+				<h2 class="extensions--section__title title">Download the extension</h2>
+				<p class="extensions--section__description">
+					We’ve got more browsers in the pipeline. Please do let us know if
+					you’ve got a favourite you’d like us to prioritize.
+				</p>
+			</div>
+			<div
+				class="extensions--section__area extensions--main container flex-group"
+			>
+				<div class="extensions--main__chrome individual--extension">
+					<div class="individual--extension__upper-content">
+						<img
+							src="./images/logo-chrome.svg"
+							class="individual--extension__logo"
+						/>
+						<h4 class="individual--extension__title">Add to Chrome</h4>
+						<p class="individual--extension__description">Minimum version 62</p>
+					</div>
+					<div class="individual--extension__bottom-content">
+						<img
+							src="./images/bg-dots.svg"
+							class="individual--extension__dots"
+						/>
+						<button class="individual--extension__btn btn">
+							Add & Install Extension
+						</button>
+					</div>
+				</div>
+				<div class="extensions--main__firefox individual--extension">
+					<div class="individual--extension__upper-content">
+						<img
+							src="./images/logo-firefox.svg"
+							class="individual--extension__logo"
+						/>
+						<h4 class="individual--extension__title">Add to Firefox</h4>
+						<p class="individual--extension__description">Minimum version 55</p>
+					</div>
+					<div class="individual--extension__bottom-content">
+						<img
+							src="./images/bg-dots.svg"
+							class="individual--extension__dots"
+						/>
+						<button class="individual--extension__btn btn">
+							Add & Install Extension
+						</button>
+					</div>
+				</div>
+				<div class="extensions--main__opera individual--extension">
+					<div class="individual--extension__upper-content">
+						<img
+							src="./images/logo-opera.svg"
+							class="individual--extension__logo"
+						/>
+						<h4 class="individual--extension__title">Add to Opera</h4>
+						<p class="individual--extension__description">Minimum version 46</p>
+					</div>
+					<div class="individual--extension__bottom-content">
+						<img
+							src="./images/bg-dots.svg"
+							class="individual--extension__dots"
+						/>
+						<button class="individual--extension__btn btn">
+							Add & Install Extension
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
 
-  
-  
-  
+		<!--! Extension Area End -->
 
-  
+		<!--! Questions Area Start -->
+		<section class="questions--section">
+			<!-- Question Section Header -->
+			<div class="questions--section__header">
+				<h2 class="questions--section__title title">
+					Frequently Asked Questions
+				</h2>
+				<p class="questions--section__description">
+					Here are some of our FAQs. If you have any other questions you’d like
+					answered please feel free to email us.
+				</p>
+			</div>
+			<!-- Questions List Parent -->
+			<div class="questions--section__area container">
+				<!-- Questions List -->
+				<ul class="questions--section__question--list">
+					<!-- Single Question -->
+					<li class="questions--section__item flex-group">
+						<h4 class="questions--section__single--question">
+							What is Bookmark?
+						</h4>
+						<i class="fa-solid fa-angle-down"></i>
+					</li>
+					<li class="questions--section__item flex-group">
+						<h4 class="questions--section__single--question">
+							How can I request a new browser?
+						</h4>
+						<i class="fa-solid fa-angle-down"></i>
+					</li>
+					<li class="questions--section__item flex-group">
+						<h4 class="questions--section__single--question">
+							Is there a mobile app?
+						</h4>
+						<i class="fa-solid fa-angle-down"></i>
+					</li>
+					<li
+						class="questions--section__item questions--section__item--border flex-group"
+					>
+						<h4 class="questions--section__single--question">
+							What about other Chromium browsers?
+						</h4>
+						<i class="fa-solid fa-angle-down"></i>
+					</li>
+				</ul>
+				<!-- Questions Section Cta -->
+				<div class="questions--section__cta">
+					<button class="questions--section__btn btn">More Info</button>
+				</div>
+			</div>
+		</section>
 
-  
+		<!--! Questions Area End -->
 
-  
+		<!--! Newsletter Area Start -->
 
-  Intelligent search
+		<section class="newsletter--section">
+			<div class="newsletter--section__area container">
+				<p class="newsletter--section__members">35,000+ ALREADY JOINED</p>
+				<h2 class="newsletter--section__title">
+					Stay up-to-date with what we're doing
+				</h2>
+				<form class="newsletter--section__form">
+					<input type="email" placeholder="Enter your email address" />
+					<button class="newsletter--section__btn btn" type="submit">
+						Contact Us
+					</button>
+				</form>
+			</div>
+		</section>
 
-  Our powerful search feature will help you find saved sites in no time at all. 
-  No need to trawl through all of your bookmarks.
+		<!--! Newsletter Area End -->
 
-  More Info
-
-  Share your bookmarks
-
-  Easily share your bookmarks and collections with others. Create a shareable 
-  link that you can send at the click of a button.
-
-  More Info
-
-  Download the extension
-
-  We’ve got more browsers in the pipeline. Please do let us know if you’ve 
-  got a favourite you’d like us to prioritize.
-
-  Add to Chrome
-  Minimum version 62
-  Add & Install Extension
-
-  Add to Firefox
-  Minimum version 55
-  Add & Install Extension
-
-  Add to Opera
-  Minimum version 46
-  Add & Install Extension
-
-  Frequently Asked Questions
-  
-  Here are some of our FAQs. If you have any other questions you’d like 
-  answered please feel free to email us.
-
-  <!-- Question 1 -->
-  What is Bookmark?
-
-  <!-- Answer 1 -->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
-  justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
-
-  <!-- Question 2 -->
-  How can I request a new browser?
-
-  <!-- Answer 2 -->
-  Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
-  Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
-  ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
-  Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-
-  <!-- Question 3 -->
-  Is there a mobile app?
-
-  <!-- Answer 3 -->
-  Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
-  urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
-  sollicitudin ex et ultricies bibendum.
-
-  <!-- Question 4 -->
-  What about other Chromium browsers?
-
-  <!-- Answer 4 -->
-  Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
-  vitae neque eget nisl gravida pellentesque non ut velit.
-
-  More Info
-
-  35,000+ already joined
-
-  Stay up-to-date with what we’re doing
-
-  Contact Us
-
-  Features
-  Pricing
-  Contact
-
-</body>
+		<!--! Footer Area Start -->
+		<footer class="footer--section">
+			<div class="footer--section__area container flex-group">
+				<div class="footer--section__links flex-group">
+					<div class="footer--section__logo">
+						<img src="./images/logo-bookmark.svg" alt="" />
+					</div>
+					<ul class="footer--section__menu flex-group">
+						<li class="footer--section__item"><a href="#">Features</a></li>
+						<li class="footer--section__item"><a href="#">Pricing</a></li>
+						<li class="footer--section__item"><a href="#">Contact</a></li>
+					</ul>
+				</div>
+				<div class="footer--section__social flex-group">
+					<img src="./images/icon-facebook.svg" alt="" />
+					<img src="./images/icon-twitter.svg" alt="" />
+				</div>
+			</div>
+		</footer>
+		<!--! Footer Area End -->
+	</body>
 </html>
+
+<!-- Features section tab -->
+<!-- Intelligent search
+
+Our powerful search feature will help you find saved sites in no time at all. 
+No need to trawl through all of your bookmarks.
+
+More Info
+
+Share your bookmarks
+
+Easily share your bookmarks and collections with others. Create a shareable 
+link that you can send at the click of a button.
+
+More Info -->
+
+<!-- Answer 1 -->
+<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+		justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare
+		mattis. -->
+<!-- Question 2 -->
+
+<!-- Answer 2 -->
+<!-- Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+		ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet
+		convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse
+		imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue
+		massa, ultricies non ligula. Suspendisse imperdiet. -->
+
+<!-- Question 3 -->
+
+<!-- Answer 3 -->
+<!-- Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum
+		dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra
+		mattis sit amet pharetra purus. Sed sollicitudin ex et ultricies bibendum. -->
+
+<!-- Question 4 -->
+
+<!-- Answer 4 -->
+<!-- Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at
+		euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut
+		velit. More Info 35,000+ already joined Stay up-to-date with what we’re
+		doing Contact Us Features Pricing Contact -->
