@@ -11,6 +11,7 @@
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
+	box-sizing: border-box;
 }
 
 img,
@@ -25,8 +26,7 @@ body {
 }
 
 .container {
-	max-width: 1200px;
-	margin: auto;
+	padding: 0px 50px;
 }
 
 .flex-group {
@@ -58,6 +58,24 @@ p {
 }
 
 /*! Header Design Start */
+
+ul.mobile--social--links {
+	display: none;
+}
+
+.header-area__cta {
+	display: none;
+}
+
+.header-area__cta .menu-icon{
+	border: none;
+	outline: none;
+}
+
+.mobile--menu--header {
+	display: none;
+}
+
 .header.flex-group {
 	justify-content: space-between;
 	padding: 40px 0;
@@ -80,7 +98,7 @@ p {
 	color: var(--clr-secondary-900);
 }
 
-.menu-links.flex-group a {
+.menu-links.flex-group a:not(.nav-cta) {
 	display: inline-block;
 	color: var(--clr-neutral-900);
 	letter-spacing: 1.1px;
@@ -88,7 +106,7 @@ p {
 	font-size: 14px;
 }
 
-a.nav-cta {
+button.nav-cta {
 	background: var(--clr-secondary-900);
 	color: white;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -96,7 +114,7 @@ a.nav-cta {
 	transition: 0.4s;
 }
 
-a.nav-cta:hover {
+button.nav-cta:hover {
 	border: 2px solid var(--clr-secondary-900);
 	color: var(--clr-secondary-900);
 	background: transparent;
@@ -192,14 +210,21 @@ a.chrome:hover {
 }
 
 .tabs.flex-group li {
-	padding: 10px 30px;
 	cursor: pointer;
-	border-bottom: 3px solid transparent;
+	border-bottom: 1px solid transparent;
 	transition: 0.4s;
-	color: var(--clr-neutral-900);
 }
 
-.tabs.flex-group li:hover {
+.tabs.flex-group li a {
+	color: var(--clr-neutral-900);
+	display: inline-block;
+	padding: 10px 30px;
+	border-bottom: 3px solid transparent;
+	transition: .4s;
+	margin-bottom: -1px;
+}
+
+.tabs.flex-group li:hover a {
 	border-bottom: 3px solid var(--clr-secondary-900);
 }
 
@@ -428,7 +453,6 @@ a.chrome:hover {
 }
 /*! Newsletter Design End */
 
-
 /*! Footer Design Start */
 .footer--section {
 	background-color: var(--clr-neutral-900);
@@ -443,20 +467,275 @@ a.chrome:hover {
 	gap: 50px;
 }
 
+.footer--section__logo {
+	margin-top: 6px;
+}
+
 .footer--section__menu.flex-group {
 	gap: 20px;
 }
 
-.footer--section__menu.flex-group  a {
+.footer--section__menu.flex-group a {
 	display: inline-block;
 	color: white;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 400;
+	transition: 0.4s;
+}
+
+.footer--section__menu.flex-group a:hover {
+	color: var(--clr-secondary-900);
 }
 
 .footer--section__social.flex-group {
 	gap: 20px;
 }
+
+.footer--section__social.flex-group {
+	cursor: pointer;
+}
+
 /*! Footer Design End */
+
+@media screen and (max-width: 375px) {
+	.container {
+		padding: 0px 20px;
+	}
+
+	.title {
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	/*! Header Area */
+	
+	.header-area__cta {
+		display: block;
+	}
+
+	.menu-links.flex-group {
+		flex-direction: column;
+		margin-top: 40px;
+	}
+
+	.navbar.flex-group {
+    align-items: normal;
+    flex-direction: column;
+    justify-content: space-between;
+		opacity: 0;
+		position: absolute;
+		z-index: -50;
+}
+
+.navbar.flex-group.open {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: hsl(229, 31%, 21%, 0.9);
+	z-index: 999;
+	padding: 35px 18px;
+	opacity: 1;
+}
+
+.mobile--menu--header.flex-group {
+	justify-content: space-between;
+	display: flex;
+}
+
+.mobile--menu--header .logo--light {
+		width: 50%;
+	}
+
+	.navbar.flex-group ul:not(.mobile--social--links) {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0px;
+	}
+
+	ul.mobile--social--links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.menu-links.flex-group  li {
+		border-top: 1px solid white;
+		padding: 12px 0;
+		width: 100%;
+	}
+
+	.menu-links.flex-group a:not(.nav-cta) {
+		color: white;
+	}
+
+	.menu-links.flex-group .nav-cta {
+		width: 100%;
+		background: transparent;
+		border: 2px solid white;
+	}
+
+	.menu-links.flex-group .nav-cta:hover {
+		background: white;
+	}
+
+	/*! Banner Area */
+
+	.banner__section.flex-group {
+		flex-direction: column-reverse;
+	}
+
+	.banner__left-side {
+		width: 100%;
+	}
+
+	.banner__title {
+		font-size: 28px;
+		text-align: center;
+	}
+
+	.banner__para {
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.banner__right-side {
+		width: 100%;
+	}
+
+	.banner__cta.flex-group {
+		justify-content: center;
+	}
+
+	.banner-cta {
+		font-size: 12px;
+	}
+	/*! Features Area */
+
+	.features-para {
+		width: 90%;
+	}
+
+	.features-tabs {
+		width: 90%;
+	}
+
+	.tabs.flex-group {
+		flex-direction: column;
+	}
+
+	.tabs.flex-group li {
+		text-align: center;
+		width: 100%;
+		border-bottom: 1px solid var(--clr-neutral-500);
+	}
+
+	.tabs.flex-group li:nth-child(3) {
+		border-bottom: none;
+	}
+
+	.features-section.flex-group {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.features-left {
+		width: 100%;
+	}
+
+	.features-right {
+		width: 100%;
+	}
+
+	.bookmark-title {
+		text-align: center;
+	}
+
+	.bookmark-para {
+		text-align: center;
+	}
+
+	.bookmark-cta {
+		text-align: center;
+	}
+
+	/*! Extension Area  */
+
+	.extensions--section__area.flex-group {
+		flex-direction: column;
+	}
+
+	.extensions--section__description {
+		width: 90%;
+	}
+
+	.extensions--main__firefox {
+		margin-top: 0px;
+	}
+
+	.extensions--main__opera {
+		margin-top: 0px;
+	}
+
+	.individual--extension {
+		width: 80%;
+	}
+	/* questions area */
+	.questions--section__description {
+		width: 90%;
+	}
+
+	.questions--section__area {
+		width: 90%;
+	}
+
+	.questions--section__single--question {
+		font-size: 14px;
+	}
+
+	.questions--section__cta {
+		margin: 0px;
+		margin-top: 20px;
+	}
+
+	/* ! Newsletter Area */
+	.newsletter--section__title {
+		width: 90%;
+	}
+
+	.newsletter--section__form {
+		width: 90%;
+	}
+
+	.newsletter--section__form input,
+	.newsletter--section__form button {
+		width: 100%;
+	}
+
+	/* ! Footer Area */
+	.footer--section__area.flex-group {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.footer--section__links.flex-group {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.footer--section__menu.flex-group {
+		flex-direction: column;
+	}
+
+}
+/* ! Media Queries */

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- displays site properly based on user's device -->
+
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -29,19 +29,43 @@
 	<body>
 		<!--! Header Area Start -->
 
-		<header class="header-area">
-			<div class="header container flex-group">
+		<header class="header-area container">
+			<div class="header flex-group">
 				<div class="header-logo">
 					<img src="./images/logo-bookmark.svg" alt="" />
 				</div>
-				<nav class="navbar flex-group">
-					<ul class="menu-links flex-group">
-						<li><a href="">Features</a></li>
-						<li><a href="">Pricing</a></li>
-						<li><a href="">Contact</a></li>
+				<nav id="navbar" class="navbar flex-group">
+					<div class="mobile--menu-items">
+						<div class="mobile--menu--header flex-group">
+							<img
+								class="logo--light"
+								src="./images/logo-bookmark-light.svg"
+								alt="bookmark logo"
+							/>
+							<button onclick="closeMobileMenu()" id="close-menu">
+								<img src="./images/icon-close.svg" alt="close icon" />
+							</button>
+						</div>
+
+						<ul class="menu-links flex-group">
+							<li><a href="">Features</a></li>
+							<li><a href="">Pricing</a></li>
+							<li><a href="">Contact</a></li>
+							<li><button class="btn nav-cta">Login</button></li>
+						</ul>
+					</div>
+					<ul class="mobile--social--links">
+						<li>
+							<img src="./images/icon-facebook.svg" alt="facebook icon" />
+						</li>
+						<li><img src="./images/icon-twitter.svg" alt="twitter icon" /></li>
 					</ul>
-					<a href="#" class="btn nav-cta">Login</a>
 				</nav>
+				<div class="header-area__cta">
+					<button onclick="openMobileMenu()" id="open-menu" class="menu-icon">
+						<img src="./images/icon-hamburger.svg" alt="hamburger icon" />
+					</button>
+				</div>
 			</div>
 		</header>
 
@@ -84,9 +108,9 @@
 			</div>
 			<div class="features-tabs">
 				<ul class="tabs flex-group">
-					<li>Simple Bookmarking</li>
-					<li>Speedy Searching</li>
-					<li>Easy Sharing</li>
+					<li><a href="#">Simple Bookmarking</a></li>
+					<li><a href="#">Speedy Searching</a></li>
+					<li><a href="#">Easy Sharing</a></li>
 				</ul>
 			</div>
 			<div class="features-section container flex-group">
@@ -100,7 +124,9 @@
 						interface gives you complete control over how you manage your
 						favourite sites.
 					</p>
-					<a href="" class="btn bookmark-btn">More Info</a>
+					<div class="bookmark-cta">
+						<a href="" class="btn bookmark-btn">More Info</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -259,7 +285,7 @@
 			<div class="footer--section__area container flex-group">
 				<div class="footer--section__links flex-group">
 					<div class="footer--section__logo">
-						<img src="./images/logo-bookmark.svg" alt="" />
+						<img src="./images/logo-bookmark-light.svg" alt="" />
 					</div>
 					<ul class="footer--section__menu flex-group">
 						<li class="footer--section__item"><a href="#">Features</a></li>
@@ -274,6 +300,8 @@
 			</div>
 		</footer>
 		<!--! Footer Area End -->
+
+		<script src="script.js"></script>
 	</body>
 </html>
 
