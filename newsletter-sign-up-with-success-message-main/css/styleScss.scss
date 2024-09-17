@@ -26,7 +26,8 @@
 
 	--fs-300: 0.825rem;
 	--fs-400: 1rem;
-	--fs-900: 2.5rem;
+	--fs-700: 2.5rem;
+	--fs-900: 2.75rem;
 }
 
 // box sizing rules
@@ -70,10 +71,10 @@ body {
 	color: var(--clr-neutral-800);
 	line-height: 1.5;
 
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  background: var(--clr-neutral-800);
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+	background: var(--clr-neutral-100);
 }
 
 input {
@@ -90,8 +91,8 @@ input::placeholder {
 }
 
 input:not(:focus):invalid {
-  color: var(--clr-accent-400);
-  border: 1px solid var(--clr-accent-400);
+	color: var(--clr-accent-400);
+	border: 1px solid var(--clr-accent-400);
 }
 
 .form-group {
@@ -102,23 +103,23 @@ input:not(:focus):invalid {
 }
 
 .form-group > .error {
-  grid-row: 1;
-  grid-column: 2;
-  text-align: end;
-  color: var(--clr-accent-400);
-  display: none;
+	grid-row: 1;
+	grid-column: 2;
+	text-align: end;
+	color: var(--clr-accent-400);
+	display: none;
 }
 
 .form-group > :not(:focus):invalid + .error {
-  display: block;
+	display: block;
 }
 
 .form-group.with-error-field {
-  grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 }
 
 .form-group.with-error-field > input {
-  grid-column: 1 / -1;
+	grid-column: 1 / -1;
 }
 
 .button {
@@ -129,11 +130,12 @@ input:not(:focus):invalid {
 	border: 0;
 	padding: 1rem;
 	border-radius: 0.5rem;
+	cursor: pointer;
 }
 
 .button:hover,
 .button:focus-visible {
-  position: relative;
+	position: relative;
 	background: linear-gradient(
 		90deg,
 		var(--clr-accent-400),
@@ -142,20 +144,20 @@ input:not(:focus):invalid {
 }
 
 form {
-  isolation: isolate;
+	isolation: isolate;
 }
 
 .button:hover::after,
 .button:focus-visible::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: inherit;
-  border-radius: inherit;
-  translate: 0 1.5rem;
-  filter: blur(1rem);
-  opacity: .5;
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: inherit;
+	border-radius: inherit;
+	translate: 0 1.5rem;
+	filter: blur(1rem);
+	opacity: 0.5;
 }
 
 .checkmark-list {
@@ -173,29 +175,32 @@ form {
 }
 
 .newsletter-cta {
-  max-width: 850px;
-  border-radius: 1rem;
-  background-color: var(--clr-neutral-100);
+	max-width: 850px;
+	border-radius: 1rem;
+	background-color: var(--clr-neutral-100);
 }
 
 @media (min-width: 650px) {
-  .newsletter-cta {
-    margin-inline: 1rem;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr .75fr;
-    padding: 2rem;
-    border-radius: 1rem;
-  }
+	body {
+		background-color: var(--clr-neutral-800);
+	}
+	.newsletter-cta {
+		margin-inline: 1rem;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr 0.75fr;
+		padding: 2rem;
+		border-radius: 1rem;
+	}
 
-  .newsletter-cta > .content {
-    grid-column: 1;
-    grid-row: 1;
-  }
+	.newsletter-cta > .content {
+		grid-column: 1;
+		grid-row: 1;
+	}
 }
 
 .newsletter-cta img {
-  margin-inline: auto;
+	margin-inline: auto;
 }
 
 .newsletter-cta > .content {
@@ -204,8 +209,12 @@ form {
 	padding: 1.5rem;
 }
 
+.hide {
+	display: none;
+}
+
 .newsletter-cta .title {
-	font-size: var(--fs-900);
+	font-size: var(--fs-700);
 	font-weight: var(--fw-bold);
 }
 
@@ -213,4 +222,38 @@ form {
 	margin-block-start: 1.25rem;
 	display: grid;
 	gap: 1.5rem;
+}
+
+.newsletter-success {
+	display: grid;
+	gap: 10rem;
+	padding: 2rem;
+}
+
+@media (min-width: 650px) {
+	.newsletter-success {
+		width: 400px;
+		padding: 2rem 4rem;
+		border-radius: 1rem;
+		background: var(--clr-neutral-100);
+		gap: 1rem;
+	}
+}
+
+.success-message {
+	display: grid;
+	gap: 1rem;
+}
+
+.success-message > img {
+	width: 50px;
+}
+
+.success-message > h1.title {
+	line-height: 1;
+	font-size: var(--fs-900);
+}
+
+.success-email {
+	font-weight: var(--fw-bold);
 }

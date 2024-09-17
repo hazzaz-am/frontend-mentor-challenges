@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
 
-  <link rel="stylesheet" href="./css/styleScss.css">
-</head>
-<body>
+		<title>
+			Frontend Mentor | Newsletter sign-up form with success message
+		</title>
 
-  <!-- Sign-up form start -->
+		<link rel="stylesheet" href="./css/styleScss.css" />
+	</head>
+	<body>
+		<div id="newsletter-cta" class="newsletter-cta">
+			<picture>
+				<source
+					media="(min-width: 650px)"
+					srcset="./assets/images/illustration-sign-up-desktop.svg"
+				/>
+				<img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
+			</picture>
 
-  <div class="newsletter-cta">
-    <picture>
-      <source 
-        media="(min-width: 650px)"
-        srcset="./assets/images/illustration-sign-up-desktop.svg"
-      >
-      <img src="./assets/images/illustration-sign-up-mobile.svg" alt="">
-    </picture>
-  
-    <div class="content">
-      <h1 class="title">Stay updated!</h1>
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul role="list" class="checkmark-list">
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
-      
-      
-      <form>
-        <div class="form-group with-error-field">
-          <label for="email">Email address</label>
-          <input id="email" type="email" placeholder="email@company.com">
-          <span class="error">Email Adreess Required</span>
+			<div class="content">
+				<h1 class="title">Stay updated!</h1>
+				<p>Join 60,000+ product managers receiving monthly updates on:</p>
+				<ul role="list" class="checkmark-list">
+					<li>Product discovery and building what matters</li>
+					<li>Measuring to ensure updates are a success</li>
+					<li>And much more!</li>
+				</ul>
+
+				<form id="form">
+					<div class="form-group with-error-field">
+						<label for="email">Email address</label>
+						<input id="email" type="email" placeholder="email@company.com" />
+						<span class="error">Email Adreess Required</span>
+					</div>
+					<button class="button">Subscribe to monthly newsletter</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="newsletter-success" class="hide">
+			<div class="newsletter-success">
+				<div class="success-message">
+          <img src="./assets/images/icon-success.svg" alt="" />
+				<h1 class="title">Thanks for subscribing</h1>
+				<p>
+					A confirmation email has been sent to
+					<span class="success-email">email@company.com</span>. Please open it
+					and click the button inside to confirm your subscription.
+				</p>
         </div>
-        <button class="button">Subscribe to monthly newsletter</button>
-      </form>
-    </div>
-  </div>
-  
-  <!-- Sign-up form end -->
+				<button class="button">Dismiss message</button>
+			</div>
+		</div>
 
-
-
-
-</body>
+		<script src="script.js"></script>
+	</body>
 </html>
