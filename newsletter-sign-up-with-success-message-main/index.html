@@ -40,8 +40,8 @@
 				<form id="form">
 					<div class="form-group with-error-field">
 						<label for="email">Email address</label>
-						<input id="email" type="email" placeholder="email@company.com" />
-						<span class="error">Email Adreess Required</span>
+						<input id="email" class="email" type="email" placeholder="email@company.com" />
+						<span id="error" class="error hide">Valid Email Adreess</span>
 					</div>
 					<button class="button">Subscribe to monthly newsletter</button>
 				</form>
@@ -51,14 +51,14 @@
 		<div id="newsletter-success" class="hide">
 			<div class="newsletter-success">
 				<div class="success-message">
-          <img src="./assets/images/icon-success.svg" alt="" />
-				<h1 class="title">Thanks for subscribing</h1>
-				<p>
-					A confirmation email has been sent to
-					<span class="success-email">email@company.com</span>. Please open it
-					and click the button inside to confirm your subscription.
-				</p>
-        </div>
+					<img src="./assets/images/icon-success.svg" alt="" />
+					<h1 class="title">Thanks for subscribing</h1>
+					<p>
+						A confirmation email has been sent to
+						<span id="success-email" class="success-email"></span>. Please open it
+						and click the button inside to confirm your subscription.
+					</p>
+				</div>
 				<button class="button">Dismiss message</button>
 			</div>
 		</div>

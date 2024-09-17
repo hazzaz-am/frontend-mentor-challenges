@@ -17,7 +17,8 @@
 	--clr-neutral-100: hsl(0, 0%, 100%);
 
 	--clr-accent-400: hsl(4, 100%, 67%);
-	--clr-accent-500: hsl(347, 100%, 66%);
+	--clr-accent-500: hsl(4, 100%, 67%, 0.2);
+	--clr-accent-600: hsl(347, 100%, 66%);
 
 	--ff-base: Roboto, sans-serif;
 
@@ -90,9 +91,10 @@ input::placeholder {
 	color: var(--clr-neutral-200);
 }
 
-input:not(:focus):invalid {
+.invalid {
 	color: var(--clr-accent-400);
 	border: 1px solid var(--clr-accent-400);
+	background: var(--clr-accent-500);
 }
 
 .form-group {
@@ -107,11 +109,6 @@ input:not(:focus):invalid {
 	grid-column: 2;
 	text-align: end;
 	color: var(--clr-accent-400);
-	display: none;
-}
-
-.form-group > :not(:focus):invalid + .error {
-	display: block;
 }
 
 .form-group.with-error-field {
@@ -139,7 +136,7 @@ input:not(:focus):invalid {
 	background: linear-gradient(
 		90deg,
 		var(--clr-accent-400),
-		var(--clr-accent-500)
+		var(--clr-accent-600)
 	);
 }
 
