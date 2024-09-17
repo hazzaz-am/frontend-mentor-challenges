@@ -3,7 +3,8 @@ const form = document.getElementById("form");
 const input = document.getElementById("email");
 const successMessage = document.getElementById("newsletter-success");
 const error = document.getElementById("error");
-const successEmail = document.getElementById("success-email")
+const successEmail = document.getElementById("success-email");
+const dismissButton = document.getElementById("dismiss-button");
 
 // Email validation
 const validateEmail = (email) => {
@@ -37,3 +38,9 @@ form.addEventListener("submit", (e) => {
   });
 
 });
+
+dismissButton.addEventListener("click", () => {
+  successMessage.classList.add("hide");
+  newsletterCta.classList.remove("hide");
+  form.reset()
+})
