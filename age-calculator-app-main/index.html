@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div id="data__input" class="data__input">
+        <form class="data__input--form">
+          <div class="single--input">
+            <label for="day">Day</label>
+            <input type="number" name="day" id="day" placeholder="DD" />
+          </div>
+          <div class="single--input">
+            <label for="month">Month</label>
+            <input type="number" name="month" id="month" placeholder="MM" />
+          </div>
+          <div class="single--input">
+            <label for="year">Year</label>
+            <input type="number" name="year" id="year" placeholder="YYYY" />
+          </div>
+        </form>
+      </div>
+
+      <div class="divider">
+        <hr />
+        <img src="./assets/images/icon-arrow.svg" alt="" />
+      </div>
+      <div class="final__data">
+        <h1 class="final__data--title final__date--years">
+          <span class="final__data--placeholder">--</span> years
+        </h1>
+        <h2 class="final__data--title final__date--months">
+          <span class="final__data--placeholder">--</span> months
+        </h2>
+        <h2 class="final__data--title final__date--days">
+          <span class="final__data--placeholder">--</span> days
+        </h2>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

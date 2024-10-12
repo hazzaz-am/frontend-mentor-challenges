@@ -1,0 +1,132 @@
+:root {
+  --clr-primary--900: hsl(259, 100%, 65%);
+  --clr-secondary--900: hsl(0, 100%, 67%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 94%);
+  --clr-neutral-300: hsl(0, 0%, 86%);
+  --clr-neutral-500: hsl(0, 1%, 44%);
+  --clr-neutral-900: hsl(0, 0%, 8%);
+
+  --fs-body: 32px;
+
+  --ff-primary: "Poppins", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+  --fw-800: 800;
+}
+
+/* general styling */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  width: 100%;
+}
+
+body {
+  background-color: var(--clr-neutral-200);
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-color: var(--clr-neutral-100);
+  width: 700px;
+  padding: 50px;
+  border-radius: 20px 20px 150px 20px;
+}
+
+.data__input--form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.single--input label {
+  font-size: 16px;
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--clr-neutral-500);
+  margin-bottom: 10px;
+  font-weight: var(--fw-400);
+}
+
+.data__input--form input {
+  width: 160px;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-400);
+  font-family: var(--ff-primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--clr-neutral-300);
+  color: var(--clr-neutral-900);
+}
+
+input::placeholder {
+  color: var(--clr-neutral-500);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-400);
+}
+
+input:focus {
+  outline-style: solid;
+  outline-color: var(--clr-primary--900);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.single--input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.final__data--placeholder {
+  color: var(--clr-primary--900);
+}
+
+.final__data--title {
+  font-weight: var(--fw-800);
+  font-size: 64px;
+  color: var(--clr-neutral-900);
+  font-style: italic;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.divider hr {
+  width: 100%;
+}
+
+.divider img {
+  width: 60px;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: var(--clr-primary--900);
+  cursor: pointer;
+  transition: background-color .4s;
+}
+
+.divider img:hover {
+  background-color: var(--clr-neutral-900);
+}
