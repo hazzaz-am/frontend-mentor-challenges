@@ -19,20 +19,34 @@
     <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Job Listings</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
   </head>
   <body>
     <header class="header"></header>
     <div class="container">
-      <div class="search">
-        <div id="search__content" class="search__content">
-          <!-- <span class="close--tag">Backend</span>
-          <span class="close--tag">React</span>
-          <span class="close--tag">Javascript</span> -->
-        </div>
-        <button class="search__clear">Clear</button>
+      <div id="search" class="search search--hidden">
+        <div class="search__content" id="search-content"></div>
+
+        <button id="clear" class="search__clear">Clear</button>
       </div>
-      <div id="jobs" class="jobs">
-      </div>
+
+      <div class="jobs" id="jobs"></div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
     </div>
     <script src="script.js"></script>
   </body>

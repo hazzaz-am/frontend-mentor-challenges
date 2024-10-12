@@ -1,4 +1,9 @@
-const jobListings = [
+const TAG_ACTIVE_CLASS = "tag--active";
+const SEARCH_HIDDEN_CLASS = "search--hidden";
+const CLOSE_TAG_CLASS = "close-tag";
+const TAG_CLASS = "tag";
+
+const jobsListings = [
   {
     id: 1,
     company: "Photosnap",
@@ -12,7 +17,6 @@ const jobListings = [
     contract: "Full Time",
     location: "USA Only",
     languages: ["HTML", "CSS", "JavaScript"],
-    tools: [],
   },
   {
     id: 2,
@@ -57,7 +61,6 @@ const jobListings = [
     contract: "Contract",
     location: "USA Only",
     languages: ["CSS", "JavaScript"],
-    tools: [],
   },
   {
     id: 5,
@@ -66,13 +69,13 @@ const jobListings = [
     new: false,
     featured: false,
     position: "Software Engineer",
-    role: "Fullstack",
+    role: "FullStack",
     level: "Midweight",
     postedAt: "1w ago",
     contract: "Full Time",
     location: "Worldwide",
-    languages: ["JavaScript", "Ruby"],
-    tools: ["Sass"],
+    languages: ["JavaScript"],
+    tools: ["Ruby", "Sass"],
   },
   {
     id: 6,
@@ -86,7 +89,6 @@ const jobListings = [
     postedAt: "2w ago",
     contract: "Full Time",
     location: "UK Only",
-    languages: ["Ruby"],
     tools: ["RoR"],
   },
   {
@@ -117,7 +119,7 @@ const jobListings = [
     contract: "Full Time",
     location: "USA Only",
     languages: ["JavaScript"],
-    tools: ["Vue", "Sass"],
+    tools: ["Vue, Sass"],
   },
   {
     id: 9,
@@ -151,91 +153,142 @@ const jobListings = [
   },
 ];
 
-// single tag create
-function getTagHTML(tag, classType = "tag") {
-  return `<span class=${classType}>${tag}</span>`;
+function getTagHTML(tag, tagClasses) {
+  return `<span class="${tagClasses}">
+                ${tag}
+            </span>`;
 }
 
-// toggle active tag class
-function toggleActiveClass(elem, className) {
-  if (elem.classList.contains(className)) {
-    elem.classList.remove(className);
-  } else {
-    elem.classList.add(className);
-  }
-}
-
-// single job markup
-function getJobListingHTML(jobData) {
-  const tagsPlaceHolder = "Tags Placeholder";
+function getJobListingHTML(jobData, filterTags = []) {
+  const JOB_TAGS_PLACEHOLDER = "###JOB_TAGS###";
   let jobListingHTML = `
-    <div class="jobs__item">
-          <div class="jobs__column jobs__column-left">
-            <img
-              src=${jobData.logo}
-              alt=${jobData.company}
-              class="jobs__img"
-            />
-            <div class="jobs__info">
-              <span class="jobs__company">${jobData.company}</span>
-              <span class="jobs__title">${jobData.position}</span>
-
-              <ul class="jobs__details">
-                <li class="jobs__details--item">${jobData.postedAt}</li>
-                <li class="jobs__details--item">${jobData.contract}</li>
-                <li class="jobs__details--item">${jobData.location}</li>
-              </ul>
+        <div class="jobs__item">
+            <div class="jobs__column jobs__column--left">
+                <img src="${jobData.logo}" alt="${jobData.company}" class="jobs__img" />
+                <div class="jobs__info">
+                    <span class="jobs__company">${jobData.company}</span>
+                    <span class="jobs__title">${jobData.position}</span>
+                    
+                    <ul class="jobs__details">
+                        <li class="jobs__details-item">${jobData.postedAt}</li>
+                        <li class="jobs__details-item">${jobData.contract}</li>
+                        <li class="jobs__details-item">${jobData.location}</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div id="tagsForSearch" class="jobs__column jobs__column-right">
-            ${tagsPlaceHolder}
-          </div>
-    </div>
+            <div class="jobs__column jobs__column--right">
+                ${JOB_TAGS_PLACEHOLDER}
+            </div>
+        </div>
     `;
 
-  //  creating tags for each job
-  const tagsArray = [
+  const tagsList = [
     jobData.role,
     jobData.level,
     ...(jobData.languages || []),
     ...(jobData.tools || []),
   ];
+  const tagsListLowercase = tagsList.map((t) => t && t.toLowerCase());
+  const passesFilter =
+    !filterTags.length ||
+    filterTags.every((tag) =>
+      tagsListLowercase.includes(tag && tag.toLowerCase())
+    );
 
-  const tagsForJob = tagsArray.reduce((tagsString, currTag) => {
-    return tagsString + getTagHTML(currTag);
+  if (!passesFilter) {
+    return "";
+  }
+
+  const tagsString = tagsList.reduce((acc, currentTag) => {
+    const activeClass =
+      (filterTags.includes(currentTag) && TAG_ACTIVE_CLASS) || "";
+
+    return acc + getTagHTML(currentTag, `${TAG_CLASS} ${activeClass}`);
   }, "");
-  return jobListingHTML.replace("Tags Placeholder", tagsForJob);
+
+  return jobListingHTML.replace(JOB_TAGS_PLACEHOLDER, tagsString);
 }
 
-// gather all jobs
-const allJobs = jobListings.reduce((acc, currentJob) => {
-  return acc + getJobListingHTML(currentJob);
-}, "");
+function toggleClass(el, className) {
+  if (el.classList.contains(className)) {
+    el.classList.remove(className);
 
-// insert all jobs
-document.getElementById("jobs").innerHTML = allJobs;
-
-// add tags to searchbar
-document.getElementById("jobs").addEventListener("click", (event) => {
-  const searchContent = document.getElementById("search__content");
-  const targetElement = event.target;
-  const targetElementValue = targetElement.innerHTML;
-
-  if (targetElement.classList.contains("tag")) {
-    let searchBarTags = Array.from(searchContent.children)
-      .map((elem) => elem.innerHTML)
-      .filter((el) => !!el);
-
-    if (searchBarTags.includes(targetElementValue)) {
-      searchBarTags = searchBarTags.filter((tag) => tag !== targetElementValue);
-    } else {
-      searchBarTags = [...searchBarTags, targetElementValue];
-    }
-
-    toggleActiveClass(targetElement, "tag--active");
-
-    searchContent.innerHTML = searchBarTags.reduce((acc, currTag) => {
-      return acc + getTagHTML(currTag, "close--tag");
-    }, "");
+    return;
   }
+
+  el.classList.add(className);
+}
+
+function getSearchBarTags(tagValue, searchContentEl) {
+  let searchBarTags = Array.from(searchContentEl.children)
+    .map((node) => node.innerHTML && node.innerHTML.trim())
+    .filter((tag) => !!tag);
+
+  if (searchBarTags.includes(tagValue)) {
+    searchBarTags = searchBarTags.filter((tag) => tag !== tagValue);
+  } else {
+    searchBarTags = [...searchBarTags, tagValue];
+  }
+
+  return searchBarTags;
+}
+
+function setJobsListings(filterTags) {
+  const jobsListingsHTML = jobsListings.reduce((acc, currentListing) => {
+    return acc + getJobListingHTML(currentListing, filterTags);
+  }, "");
+
+  document.getElementById("jobs").innerHTML = jobsListingsHTML;
+}
+
+function displaySearchWrapper(display = false) {
+  const searchWrapper = document.getElementById("search");
+
+  if (display) {
+    searchWrapper.classList.remove(SEARCH_HIDDEN_CLASS);
+
+    return;
+  }
+
+  searchWrapper.classList.add(SEARCH_HIDDEN_CLASS);
+}
+
+function setSearchbarContent(searchContentEl, tags) {
+  searchContentEl.innerHTML = tags.reduce((acc, currentTag) => {
+    return acc + getTagHTML(currentTag, CLOSE_TAG_CLASS);
+  }, "");
+}
+
+function resetState(searchContentEl) {
+  searchContentEl.innerHTML = "";
+
+  setJobsListings();
+  displaySearchWrapper(false);
+  toggleClass(targetEl, TAG_ACTIVE_CLASS);
+}
+
+window.addEventListener("click", (event) => {
+  const targetEl = event.target;
+  const targetText = targetEl.innerHTML.trim();
+  const searchContentEl = document.getElementById("search-content");
+  const searchBarTags = getSearchBarTags(targetText, searchContentEl);
+
+  if (targetEl.id === "clear" || !searchBarTags.length) {
+    resetState(searchContentEl);
+
+    return;
+  }
+
+  if (
+    ![TAG_CLASS, CLOSE_TAG_CLASS].some((c) => targetEl.classList.contains(c))
+  ) {
+    return;
+  }
+
+  setSearchbarContent(searchContentEl, searchBarTags);
+  toggleClass(targetEl, TAG_ACTIVE_CLASS);
+  displaySearchWrapper(searchBarTags.length > 0);
+  setJobsListings(searchBarTags);
 });
+
+setJobsListings();
