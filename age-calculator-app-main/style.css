@@ -54,7 +54,7 @@ main {
 }
 
 .single--input label {
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--ff-primary);
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -103,7 +103,7 @@ input::-webkit-inner-spin-button {
 
 .final__data--title {
   font-weight: var(--fw-800);
-  font-size: 64px;
+  font-size: 54px;
   color: var(--clr-neutral-900);
   font-style: italic;
 }
@@ -124,9 +124,39 @@ input::-webkit-inner-spin-button {
   border-radius: 50px;
   background-color: var(--clr-primary--900);
   cursor: pointer;
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
 
 .divider img:hover {
   background-color: var(--clr-neutral-900);
+}
+
+/* errors */
+.required--error {
+  color: var(--clr-secondary--900);
+}
+
+.day__error,
+.month__error,
+.year__error,
+.valid--year__error,
+.valid--day__error,
+.valid--month__error {
+  display: none;
+}
+
+.required {
+  color: var(--clr-secondary--900);
+  font-size: 12px;
+  font-weight: var(--fw-400);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+input.input__error {
+  border: 1px solid var(--clr-secondary--900);
+}
+
+.single--input label.label__error {
+  color: var(--clr-secondary--900);
 }
