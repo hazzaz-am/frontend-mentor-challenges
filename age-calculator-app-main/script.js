@@ -28,6 +28,7 @@ submit.addEventListener("click", () => {
 
   const currentYear = new Date().getFullYear();
   // checking it is valid day, month and year
+
   if (
     (parseInt(dayValue) > 31 || parseInt(dayValue) <= 0) &&
     (parseInt(monthValue) > 12 || parseInt(monthValue) <= 0) &&
@@ -46,7 +47,11 @@ submit.addEventListener("click", () => {
     validMonthErrorMessage();
     defaultErrorStyle();
     return;
-  } else if (parseInt(yearValue) > currentYear || parseInt(yearValue) <= 0) {
+  } else if (
+    parseInt(yearValue) > currentYear ||
+    parseInt(yearValue) <= 0 ||
+    parseInt(yearValue) < 1000
+  ) {
     validYearErrorMessage();
     defaultErrorStyle();
     return;
@@ -69,7 +74,6 @@ submit.addEventListener("click", () => {
 
 // calculate age
 function calculateAge(year, month, day) {
-  console.log(year, month, day);
   let now = new Date();
 
   let yearNow = now.getYear();
@@ -93,7 +97,7 @@ function calculateAge(year, month, day) {
     } else if (dateNow < dateDob) {
       --monthAge;
       dateAge = 31 - (dateDob - dateNow);
-    } else if (dateNow === dateDob){
+    } else if (dateNow === dateDob) {
       dateAge = dateNow - dateDob;
     }
     // when month now is less than birth month this logic apply
@@ -109,10 +113,10 @@ function calculateAge(year, month, day) {
       dateAge = dateNow - dateDob;
     }
     // when month now is equal than birth month this logic apply
-  } else if(monthNow === monthDob) {
+  } else if (monthNow === monthDob) {
     monthAge = monthNow - monthDob;
     if (dateNow > dateDob) {
-      dateAge = (dateNow - dateDob);
+      dateAge = dateNow - dateDob;
     } else if (dateNow < dateDob) {
       --yearAge;
       ++monthAge;
@@ -134,14 +138,16 @@ function daysInMonth(month, year) {
   return new Date(year, month, 0).getDate();
 }
 
-// function focusColorChange() {
-//   let input = document.getElementById("something");
-//   input.addEventListener("focus", function () {
-//     this.style.outlineStyle = "solid";
-//     this.style.outlineColor = "hsl(0, 100%, 67%)";
-//   });
-// }
-
 function emptyInputField() {
   dataInputForm.reset();
 }
+
+// reset date of birth
+dataInputForm.addEventListener("input", (e) => {
+  if (e.target.nodeName == "INPUT") {
+    removeErrorClasses();
+    yearsPlaceholder.innerText = "--";
+    monthsPlaceholder.innerText = "--";
+    daysPlaceholder.innerText = "--";
+  }
+});

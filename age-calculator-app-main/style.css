@@ -42,14 +42,14 @@ body {
 
 main {
   background-color: var(--clr-neutral-100);
-  width: 700px;
+  max-width: 700px;
+  width: 90%;
   padding: 50px;
-  border-radius: 20px 20px 150px 20px;
+  border-radius: 15px 15px 200px 15px;
 }
 
 .data__input--form {
   display: flex;
-  align-items: center;
   gap: 20px;
 }
 
@@ -72,6 +72,7 @@ main {
   border-radius: 8px;
   border: 1px solid var(--clr-neutral-300);
   color: var(--clr-neutral-900);
+  margin-bottom: 10px;
 }
 
 input::placeholder {
@@ -97,34 +98,23 @@ input::-webkit-inner-spin-button {
   margin-bottom: 20px;
 }
 
+.final__data {
+  margin-top: -15px;
+}
+
 .final__data--placeholder {
   color: var(--clr-primary--900);
 }
 
 .final__data--title {
   font-weight: var(--fw-800);
-  font-size: 54px;
+  font-size: 60px;
   color: var(--clr-neutral-900);
   font-style: italic;
 }
 
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .divider hr {
   width: 100%;
-}
-
-.divider img {
-  width: 60px;
-  padding: 10px;
-  border-radius: 50px;
-  background-color: var(--clr-primary--900);
-  cursor: pointer;
-  transition: background-color 0.4s;
 }
 
 .divider img:hover {
@@ -142,15 +132,15 @@ input::-webkit-inner-spin-button {
 .valid--year__error,
 .valid--day__error,
 .valid--month__error {
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
+  display: none;
 }
 
 .required {
   color: var(--clr-secondary--900);
   font-size: 12px;
   font-weight: var(--fw-400);
-  /* margin-top: 10px; */
   font-style: italic;
 }
 
@@ -160,4 +150,46 @@ input.input__error {
 
 .single--input label.label__error {
   color: var(--clr-secondary--900);
+}
+
+.divider {
+  margin-top: 20px;
+}
+
+.divider__img {
+  width: 100%;
+  margin-top: -30px;
+  text-align: right;
+}
+
+.divider img {
+  width: 60px;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: var(--clr-primary--900);
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+@media screen and (max-width: 652px) {
+  .data__input--form input {
+    width: 110px;
+    font-size: 18px;
+  }
+
+  .single--input label {
+    font-size: 12px;
+  }
+
+  .final__data--title {
+    font-size: 50px;
+  }
+
+  .required {
+    font-size: 10px;
+  }
+
+  .divider__img {
+    text-align: center;
+  }
 }

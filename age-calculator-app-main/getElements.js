@@ -6,6 +6,7 @@ const year = document.getElementById("year");
 // get form
 const dataInputForm = document.querySelector(".data__input--form")
 
+
 // get error messages
 let required = document.querySelector(".required");
 let dayError = document.querySelector(".day__error");
@@ -24,6 +25,10 @@ let labelYear = document.querySelector(".label__year");
 const yearsPlaceholder = document.querySelector(".years__placeholder");
 const monthsPlaceholder = document.querySelector(".months__placeholder");
 const daysPlaceholder = document.querySelector(".days__placeholder");
+const finalDataPlaceholder = document.querySelector(".final__data--placeholder")
 
 // get submit button
 const submit = document.getElementById("submit");
+
+// input tag
+const inputs = document.getElementsByTagName("input")
